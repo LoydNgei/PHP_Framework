@@ -1,0 +1,15 @@
+services:
+
+  web:
+      image:
+      volumes:
+        - ./public:/var/www/html/public
+      ports:
+        - "80: 80"
+
+  app:
+      image:
+      volumes:
+        - .:/var/www/html
+      extra_hosts:
+        - host.docker.internal:host-gateway
