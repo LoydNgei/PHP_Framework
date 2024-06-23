@@ -1,0 +1,23 @@
+{
+    "name": "loyd/php-framework",
+    "description": "A PHP Framework project",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Loyd",
+            "email": "loydngei@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Loyd\\Framework\\": "framework/"
+        }
+    },
+
+    "require-dev": {
+        "symfony/var-dumper": "5.4.x-dev"
+    }
+}
