@@ -1,15 +1,17 @@
+# version: '3.8'
 services:
-
   web:
-      image:
-      volumes:
-        - ./public:/var/www/html/public
-      ports:
-        - "80: 80"
+    image: php:7.4-apache
+    volumes:
+      - ./public:/var/www/html/public
+    ports:
+      - "8080:80"
 
   app:
-      image:
-      volumes:
-        - .:/var/www/html
-      extra_hosts:
-        - host.docker.internal:host-gateway
+    build: .
+    volumes:
+      - .:/var/www/html
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    working_dir: /var/www/html
+    command: tail -f /dev/null  # Keeps the container running
